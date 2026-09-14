@@ -1,40 +1,40 @@
 /* Design tokens from the approved Portfolio Palette Audit.
-   Dark is the base look; :root holds the dark values and the light
-   variant overrides them under prefers-color-scheme.
-   Font families are set by next/font in layout.tsx (--font-heading, --font-body, --font-mono);*/
+	 Dark is the base look; :root holds the dark values and the light
+	 variant overrides them under prefers-color-scheme.
+	 Font families are set by next/font in layout.tsx (--font-heading, --font-body, --font-mono);*/
 
 :root {
-  --color-bg: #161427;
-  --color-surface: #1d1a30;
-  --color-border: #2a2740;
-  --color-text: #edeaf6;
-  --color-text-secondary: #a39cbe;
+	--color-bg: #161427;
+	--color-surface: #1d1a30;
+	--color-border: #2a2740;
+	--color-text: #edeaf6;
+	--color-text-secondary: #a39cbe;
 
-  /*NOTE: one accent per view*/
-  /*primary action*/
-  --color-accent-primary: #ffd930;
-  /*status/labels*/
-  --color-accent-signal: #00ff99;
-  /*links only*/
-  --color-link: #c77dff;
+	/*NOTE: one accent per view*/
+	/*primary action*/
+	--color-accent-primary: #ffd930;
+	/*status/labels*/
+	--color-accent-signal: #00ff99;
+	/*links only*/
+	--color-link: #c77dff;
 
-  /* fills only — never used as a text color */
-  --color-muted: #4f6d7a;
+	/* fills only — never used as a text color */
+	--color-muted: #4f6d7a;
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --color-bg: #fff6d9;
-    --color-surface: #fffcf2;
-    --color-border: #e4d9b6;
-    --color-text: #161427;
-    --color-text-secondary: #5a5470;
+	:root {
+		--color-bg: #fff6d9;
+		--color-surface: #fffcf2;
+		--color-border: #e4d9b6;
+		--color-text: #161427;
+		--color-text-secondary: #5a5470;
 
-    /* NOTE: same actions like before */
-    --color-accent-primary: #8a6a00;
-    --color-accent-signal: #00734a;
-    --color-link: #6d18c4;
+		/* NOTE: same actions like before */
+		--color-accent-primary: #8a6a00;
+		--color-accent-signal: #00734a;
+		--color-link: #6d18c4;
 
-    --color-muted: #4f6d7a;
-  }
+		--color-muted: #4f6d7a;
+	}
 }
