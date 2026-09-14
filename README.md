@@ -2,7 +2,7 @@
 
 My personal portfolio — built with React (Next.js) while I put together a full stack developer profile. Project write-ups, my stack, and a way to reach me.
 
-**Live site:** Working on it
+**Live site:** [add URL once deployed]
 
 ## Stack
 
@@ -29,9 +29,10 @@ Runs on [http://localhost:3000](http://localhost:3000).
 ## Structure
 
 ```
-/app            → pages and routes
-/components     → UI components
-/styles         → design tokens, global styles
+/src
+  /app          → pages and routes
+  /components   → UI components
+  /styles       → design tokens, global styles
 /public         → static assets (no personal photos — see License)
 ```
 
