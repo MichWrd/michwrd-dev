@@ -7,7 +7,7 @@
 	align-items: center;
 	font-family: var(--font-mono), "Courier New", monospace;
 	color: var(--color-text-secondary);
-	font-size: 12px;
+	font-size: var(--font-size-xs);
 	letter-spacing: 0.12em;
 	padding: 36px 100px;
 	border-top: 1px solid var(--color-border);
@@ -24,7 +24,7 @@
 	display: inline;
 	font-family: var(--font-body), Arial, Helvetica, sans-serif;
 	color: var(--color-text-secondary);
-	font-size: 13px;
+	font-size: var(--font-size-sm);
 }
 
 @media (max-width: 720px) {
@@ -35,9 +35,5 @@
 	}
 	.footerLinks {
 	gap: 16px;
-	font-size: 11px;
-}
-.footerMeta {
-	font-size: 12px;
 }
 }
