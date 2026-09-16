@@ -1,0 +1,28 @@
+.logo {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	text-decoration: none;
+	font-size: var(--font-size-base);
+}
+
+.hash {
+	font-family: var(--font-mono), monospace;
+	color: var(--color-accent-signal);
+	font-weight: 500;
+}
+
+.wordmark {
+	color: var(--color-text);
+	text-transform: lowercase;
+	font-family: var(--font-heading), sans-serif;
+	font-weight: 700;
+	letter-spacing: normal;
+}
+
+/* visible focus ring for keyboard navigation */
+.logo:focus-visible {
+	outline: 2px solid var(--color-accent-signal);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
