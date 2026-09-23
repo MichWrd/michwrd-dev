@@ -4,6 +4,9 @@
 .vscode/
 .idea/
 .claude/
+.agents/
+.grok/
+skills-lock.json
 
 # OS (Windows)
 Thumbs.db
