@@ -1,5 +1,6 @@
 import styles from "./Navbar.module.css";
 import Logo from "./Logo";
+import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
 	return (
@@ -26,6 +27,7 @@ export default function Navbar() {
 				</div>
 				<a className={styles.navbarContact} href="#contact">CONTACT</a>
 			</div>
+			<MobileMenu />
 		</nav>
 	);
 }
