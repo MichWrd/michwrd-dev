@@ -1,6 +1,6 @@
 /* Design tokens from the approved Portfolio Palette and typo Audit.
 	Dark is the base look; :root holds the dark values and the light
-	variant overrides them under prefers-color-scheme.
+	variant overrides them if user wants to.
 	Font families are set by next/font in layout.tsx (--font-heading, --font-body, --font-mono);*/
 
 :root {
@@ -22,6 +22,21 @@
 	--color-muted: #4f6d7a;
 }
 
+/* For Light Theme */
+:root[data-theme="light"] {
+	--color-bg: #fff6d9;
+	--color-surface: #fffcf2;
+	--color-border: #e4d9b6;
+	--color-text: #161427;
+	--color-text-secondary: #5a5470;
+
+	--color-accent-primary: #006B72;
+	--color-accent-signal: #00734a;
+	--color-link: #6d18c4;
+
+	--color-muted: #4f6d7a;
+}
+
 /* Dit this to have more acces to font size and scaling*/
 :root {
 	/* ~12px — metadata, timestamps, tags */
@@ -40,21 +55,4 @@
 	--font-size-2xl: clamp(1.625rem, 1.3rem + 1.5vw, 2rem);
 	/* ~40px — large hero, if needed */
 	--font-size-3xl: clamp(1.875rem, 1.4rem + 2.2vw, 2.5rem);
-}
-
-@media (prefers-color-scheme: light) {
-	:root {
-		--color-bg: #fff6d9;
-		--color-surface: #fffcf2;
-		--color-border: #e4d9b6;
-		--color-text: #161427;
-		--color-text-secondary: #5a5470;
-
-		/* NOTE: same actions like before */
-		--color-accent-primary: #006B72;
-		--color-accent-signal: #00734a;
-		--color-link: #6d18c4;
-
-		--color-muted: #4f6d7a;
-	}
 }
