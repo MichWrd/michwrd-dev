@@ -1,6 +1,11 @@
 .navbar {
+	margin: 0 auto;
 	padding: 1.75rem 6.25rem 0;
 	display: flex;
+	position: fixed;
+	top:0;
+	left: 0;
+	right: 0;
 	justify-content: center;
 	/* Font style */
 	font-family: var(--font-mono);
@@ -14,7 +19,10 @@
 	height: 3.625rem;
 	border: 1px solid var(--color-border);
 	border-radius: 1.81rem;
-	background-color: var(--color-surface);
+	background-color: color-mix(in srgb, var(--color-surface) 78%, transparent);
+	backdrop-filter: blur(14px) saturate(140%);
+	-webkit-backdrop-filter: blur(14px) saturate(140%);
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -54,9 +62,6 @@
 	color: var(--color-text);
 	font-weight: 500;
 }
-.navbarContact:hover {
-	font-weight: 600;
-}
 
 .navbarContact {
 	display: block;
@@ -64,4 +69,25 @@
 	color: var(--color-bg);
 	padding: 0.6875rem 1.625rem;
 	border-radius: 1.3125rem;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.navbarContact:hover {
+	font-weight: 600;
+	transform: translateY(-1px);
+	box-shadow: 0 2px 10px color-mix(in srgb, var(--color-accent-primary) 30%, transparent);
+}
+
+/* Only this file decides when the desktop links disappear — MobileMenu's
+   own CSS independently decides when its trigger appears. */
+@media (max-width: 720px) {
+	.navbarLinks {
+		display: none;
+	}
+
+	.navbar {
+		margin: 0;
+		padding: 1rem 1.625rem 0;
+		display: block;
+	}
 }
