@@ -115,6 +115,7 @@
 
 .mobileResumeButton {
 	width: 100%;
+	text-align: center;
 	background-color: var(--color-accent-primary);
 	font-family: var(--font-body);
 	font-size: var(--font-size-xl);
