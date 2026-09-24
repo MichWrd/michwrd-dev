@@ -1,0 +1,154 @@
+.mobileMenu {
+	display: none;
+}
+
+.mobileBar {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.mobileButtonToggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	border: 1px solid var(--color-border);
+	border-radius: 50%;
+	background-color: var(--color-surface);
+	color: var(--color-text);
+	cursor: pointer;
+}
+
+.mobileButtonToggle:focus-visible {
+	outline: 2px solid var(--color-accent-signal);
+	outline-offset: 2px;
+}
+
+.mobileButtonIcon {
+	width: 1.5rem;
+	height: 1.5rem;
+	padding: 0;
+	margin: 0;
+}
+
+.mobilePanel {
+	width: 100vw;
+	height: 100vh;
+	height: 100dvh;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-bg);
+	border: 1px solid var(--color-border);
+	border-radius: 0.25rem;
+	overflow: hidden;
+	justify-content: space-between;
+	padding: 5.125rem 1.25rem 1.75rem;
+
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transform: translateY(-8);
+	transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease
+}
+
+.mobilePanel[data-open="true"] {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	transform: translateY(0);
+}
+
+.mobilePrimaryLinks {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	font-family: var(--font-heading);
+	font-weight: 700;
+	font-size: var(--font-size-3xl);
+	letter-spacing: -0.03em;
+	line-height: 1;
+	color: var(--color-text);
+
+	/* list styles */
+	list-style: none;
+	margin: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	padding-inline-start: 0;
+	padding: 0;
+}
+
+.mobilePrimaryLinks li {
+	display: grid;
+	grid-template-columns: 2.125rem 1fr;
+	align-items: baseline;
+	gap: 0.90rem;
+}
+.mobilePrimaryLinks a {
+	padding: 1.125rem 0;
+}
+
+.mobilePrimaryLinks li:not(:last-child) {
+	border-bottom: 1px solid var(--color-border);
+}
+
+.mobileLinkIndex {
+	color: var(--color-accent-primary);
+	font-family: var(--font-mono);
+	font-size: var(--font-size-xs);
+	letter-spacing: 0.12em;
+}
+
+.mobileFooter {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.mobileResumeButton {
+	width: 100%;
+	background-color: var(--color-accent-primary);
+	font-family: var(--font-body);
+	font-size: var(--font-size-xl);
+	font-weight: 600;
+	color: var(--color-bg);
+	border-radius: 0.45rem;
+	border: 0 solid;
+	padding: 1rem;
+}
+
+.mobileFooter hr {
+	border: 0;
+	border-top: 1px solid var(--color-border);
+}
+
+.mobileSocialLinks {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: var(--font-mono);
+	font-size: var(--font-size-xs);
+}
+
+.mobileSocialLinksGroup {
+	display: flex;
+	gap: 1.25rem;
+	align-items: center;
+	color: var(--color-link);
+}
+
+/* Only this component decides when the mobile trigger shows up. */
+@media (max-width: 720px) {
+	.mobileMenu {
+		width: 100%;
+		display: block;
+	}
+}
