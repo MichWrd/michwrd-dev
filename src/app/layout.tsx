@@ -30,6 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 	return (
 		<html
 			lang="en"
+			data-theme="dark"
 			className={`${gt_bricolage.variable} ${gt_inter.variable} ${gt_jetbrainsmono.variable}`}
 		>
 			<body>{children}</body>
