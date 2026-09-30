@@ -55,7 +55,7 @@
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
-	transform: translateY(-8);
+	transform: translateY(-8px);
 	transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
 
 	/* Tiny fix: Mobile and desktop navbar had different Bg-colors.
