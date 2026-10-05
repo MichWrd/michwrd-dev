@@ -1,10 +1,11 @@
 import styles from "./Navbar.module.css";
 import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
 	return (
-		<nav className={styles.navbar}>
+		<nav className={styles.navbar} aria-label="Main">
 			<div className={styles.navbarLinks}>
 				<div className={styles.navbarMain}>
 					<Logo />
@@ -25,7 +26,11 @@ export default function Navbar() {
 						{/* <li><a href="#blog">BLOG</a></li> */}
 					</ul>
 				</div>
-				<a className={styles.navbarContact} href="#contact">CONTACT</a>
+				<div className={styles.navbarActions}>
+					<div className={styles.navbarDividerEnd} aria-hidden="true"/>
+					<ThemeToggle />
+					<a className={styles.navbarContact} href="#contact">CONTACT</a>
+				</div>
 			</div>
 			<MobileMenu />
 		</nav>
