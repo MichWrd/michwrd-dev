@@ -1,0 +1,117 @@
+.themeToggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border: 1px solid var(--color-border);
+	border-radius: 1.25rem;
+	background-color: var(--color-bg);
+	cursor: pointer;
+	color: var(--color-text-secondary);
+	overflow: hidden;
+	transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.themeToggle:focus-visible {
+	outline: 2px solid var(--color-accent-signal);
+	outline-offset: 2px;
+	color: var(--color-accent-primary);
+}
+
+.themeToggle:hover {
+	border-color: var(--color-accent-primary);
+	color: var(--color-accent-primary);
+}
+
+.toggleIcon {
+	width: 1.25rem;
+	height: 1.25rem;
+	transition: transform 0.4s ease;
+	transform: rotate(40deg);
+}
+
+.sunMoon {
+	transform-origin: center;
+	transition: transform 0.4s ease;
+	transform: scale(1);
+}
+
+.sunRay circle {
+	transform: scale(0);
+	transform-box: view-box;
+	transform-origin: 10px 10px;
+}
+
+/* Moon Animation */
+
+.themeToggle[aria-checked="true"] .sunRay circle:nth-child(2) {
+	transform: scale(4.5) translate(3.5px, 5px);
+	color: var(--color-bg);
+}
+
+.themeToggle[aria-checked="true"] .sunRay circle:nth-child(3) {
+	transform: scale(0.5) rotate(-80deg);
+	animation: showmoon 0.4s ease both 0.10s;
+}
+
+.themeToggle[aria-checked="true"] .sunRay circle:nth-child(4) {
+	transform: scale(0.8) rotate(-85deg);
+	animation: showmoon 0.3s ease both 0.20s;
+}
+
+.themeToggle[aria-checked="true"] .sunRay circle:nth-child(5) {
+	transform: scale(0.5) rotate(-100deg);
+	animation: showmoon 0.4s ease both 0.25s;
+}
+
+/* SUN Animation */
+
+.themeToggle[aria-checked="false"] .sunRay circle:first-child {
+	animation: showsun 0.4s ease forwards;
+}
+.themeToggle[aria-checked="false"] .sunRay circle:nth-child(2) {
+	animation: showsun 0.4s ease forwards 0.05s;
+}
+.themeToggle[aria-checked="false"] .sunRay circle:nth-child(3) {
+	animation: showsun 0.4s ease forwards 0.10s;
+}
+.themeToggle[aria-checked="false"] .sunRay circle:nth-child(4) {
+	animation: showsun 0.4s ease forwards 0.15s;
+}
+.themeToggle[aria-checked="false"] .sunRay circle:nth-child(5) {
+	animation: showsun 0.4s ease forwards 0.25s;
+}
+.themeToggle[aria-checked="false"] .sunRay circle:nth-child(6) {
+	animation: showsun 0.4s ease forwards 0.30s;
+}
+
+.themeToggle[aria-checked="false"] .toggleIcon {
+	transform: rotate(90deg);
+}
+
+.themeToggle[aria-checked="false"] .sunMoon {
+	transform: scale(0.50);
+}
+
+@keyframes showsun {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 0.8;
+	}
+}
+
+@keyframes showmoon {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0.8;
+	}
+}
