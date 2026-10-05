@@ -147,7 +147,7 @@
 }
 
 /* Only this component decides when the mobile trigger shows up. */
-@media (max-width: 720px) {
+@media (max-width: 850px) {
 	.mobileMenu {
 		width: 100%;
 		display: block;
