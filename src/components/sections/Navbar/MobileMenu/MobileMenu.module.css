@@ -57,10 +57,6 @@
 	pointer-events: none;
 	transform: translateY(-8px);
 	transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-
-	/* Tiny fix: Mobile and desktop navbar had different Bg-colors.
-		This makes them match the current bg color */
-	--toggle-bg: var(--color-bg);
 }
 
 .mobilePanel[data-open="true"] {
