@@ -1,43 +1,18 @@
-import type { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 import styles from "./Button.module.css";
 
 type Variant = "primary" | "secondary";
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-    variant?: Variant;
-    href?: undefined;
-};
+type Size = "md" | "lg";
 
-type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
-    variant?: Variant;
-    href: string;
-};
+type ButtonProps = ComponentPropsWithoutRef<"button"> & {variant?: Variant; size?: Size};
 
-// Used for every CTA in the design (Ver proyectos, Descargar CV, Ver demo,
-// Código, Ping me, Send, the navbar Contact pill). Renders a <a> when href
-// is passed, otherwise a <button>.
-export default function Button({
-    variant = "primary",
-    className,
-    ...props
-}: ButtonProps | LinkProps) {
-    const classes = [styles.button, styles[variant], className]
-        .filter(Boolean)
-        .join(" ");
+type LinkProps = ComponentPropsWithoutRef<"a"> & {variant?: Variant; size?: Size};
 
-    if ("href" in props && props.href) {
-        return (
-            <a
-                className={classes}
-                {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
-            />
-        );
-    }
+export default function Button({variant = "primary", size = "md", className, ...props}: ButtonProps | LinkProps) {
+	const clases = [styles.button, styles[variant], styles[size], className].filter(Boolean).join(" ");
 
-    return (
-        <button
-            className={classes}
-            {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
-        />
-    );
+	if ("href" in props && props.href)
+		return (<a className={clases} {...props as ComponentPropsWithoutRef<"a">}/>);
+	return (<button className={clases} {...props as ComponentPropsWithoutRef<"button">}/>);
 }
