@@ -1,19 +1,24 @@
 import styles from "./SectionHeading.module.css";
 
 type SectionHeadingProps = {
-    title: string;
+    index:  string;
+    label:  string;
+    title?:  string;
+    id?:     string;
 };
 
-// The "# Section title ──────" pattern repeated at the top of About, Work,
-// Blog and Contact: a muted "#", the heading, then a rule filling the rest
-// of the row.
-export default function SectionHeading({ title }: SectionHeadingProps) {
-    return (
-        <div className={styles.heading}>
-            <h3>
-                <span className={styles.hash}>#</span> {title}
-            </h3>
-            <div className={styles.rule} />
-        </div>
-    );
+export default function SectionHeading({index, label, title, id}: SectionHeadingProps) {
+	if (!title) {
+		return (
+			<div className={styles.heading}>
+				<span className={styles.headingLable}><span className={styles.headingIndex}>{index}</span> - {label}</span>
+			</div>
+		);
+	}
+	return (
+		<div className={styles.heading}>
+            <span className={styles.headingLable}><span className={styles.headingIndex}>{index}</span> - {label}</span>
+			<h2 id={id} className={styles.headingTitle}>{title}</h2>
+		</div>
+	);
 }

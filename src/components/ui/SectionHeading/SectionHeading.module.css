@@ -1,8 +1,24 @@
 .heading {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
 }
 
-.hash {
+.headingLable {
+	font-family: var(--font-mono);
+	font-size: var(--font-size-sm);
+	letter-spacing: 0.18em;
+	color: var(--color-text-secondary);
 }
 
-.rule {
+.headingIndex{
+	color: var(--color-accent-primary);
+}
+
+.headingTitle {
+	font-family: var(--font-heading);
+	font-size: var(--font-size-3xl);
+	font-weight: 700;
+	letter-spacing: -0.025rem;
+	color: var(--color-text);
 }
