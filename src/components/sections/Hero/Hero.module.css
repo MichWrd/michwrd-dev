@@ -1,6 +1,5 @@
 .hero {
 	display: grid;
-	flex: 1;
 	padding-block: 4rem;
 	padding-inline: max(24px, calc((100% - 90rem) / 2));
 	grid-template-columns: 1fr 32.5rem;
